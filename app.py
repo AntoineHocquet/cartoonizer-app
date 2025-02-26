@@ -46,7 +46,7 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png
 
 if uploaded_file:
     img = Image.open(uploaded_file)
-    st.image(img, caption="Original Image", use_column_width=True)
+    st.image(img, caption="Original Image", use_container_width=True)
     
     st.sidebar.header("Cartoonization Parameters")
     n_colors = st.sidebar.slider("Number of Colors", 2, 20, 8)
@@ -62,4 +62,4 @@ if uploaded_file:
             block_size=block_size, 
             C=C
         )
-        st.image(cartoon, caption="Cartoonized Image", use_column_width=True)
+        st.image(cartoon, caption="Cartoonized Image", use_container_width=True)
